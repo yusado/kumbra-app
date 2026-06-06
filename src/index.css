@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-kum-bg text-kum-text;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-kum-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-kum-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-kum-borderLight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-kum-primary hover:bg-kum-primaryDark text-black font-semibold px-4 py-2 rounded-lg transition-all duration-200 shadow-glow hover:shadow-glow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-kum-card hover:bg-kum-cardHover border border-kum-border text-kum-text font-medium px-4 py-2 rounded-lg transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-kum-danger/20 hover:bg-kum-danger/30 border border-kum-danger/50 text-kum-danger font-medium px-4 py-2 rounded-lg transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-kum-card border border-kum-border rounded-xl p-4 shadow-card;
+  }
+
+  .card-lg {
+    @apply bg-kum-card border border-kum-border rounded-2xl p-6 shadow-card-lg;
+  }
+
+  .input {
+    @apply w-full bg-kum-bg border border-kum-border rounded-lg px-3 py-2.5 text-kum-text placeholder:text-kum-textDim focus:outline-none focus:border-kum-primary focus:ring-1 focus:ring-kum-primary/30 transition-all;
+  }
+
+  .select {
+    @apply bg-kum-bg border border-kum-border rounded-lg px-3 py-2.5 text-kum-text focus:outline-none focus:border-kum-primary transition-all cursor-pointer appearance-none;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-bist {
+    @apply bg-orange-500/20 text-orange-400 border border-orange-500/30;
+  }
+
+  .badge-us {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+
+  .badge-fund {
+    @apply bg-purple-500/20 text-purple-400 border border-purple-500/30;
+  }
+
+  .badge-fx {
+    @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+
+  .badge-metal {
+    @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold tabular-nums tracking-tight;
+  }
+
+  .stat-label {
+    @apply text-xs text-kum-textMuted uppercase tracking-wider font-medium;
+  }
+
+  .glow-line {
+    @apply h-px bg-gradient-to-r from-transparent via-kum-primary/50 to-transparent;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-kum-primary to-kum-secondary bg-clip-text text-transparent;
+  }
+
+  .animate-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
